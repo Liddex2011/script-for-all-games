@@ -37,3 +37,7 @@ local Section2 = Tab2:NewSection("Это халяль")
 Section2:NewButton("Natural Disaster", "есть функция, которая тянет все блоки к себе", function()
   loadstring(game:HttpGet('https://raw.githubusercontent.com/zeroidxx/axe-hub/refs/heads/main/axehub%20nds.txt'))()
   end)
+
+Section2:NewButton ("Изменение текстур f3x", "Удалять расширять текстуры", function()
+      loadstring(game:GetObjects("rbxassetid://6695644299")[1].Source)()
+   end)
