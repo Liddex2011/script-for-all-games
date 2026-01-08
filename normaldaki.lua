@@ -41,3 +41,7 @@ Section2:NewButton("Natural Disaster", "есть функция, которая 
 Section2:NewButton ("Изменение текстур f3x", "Удалять расширять текстуры", function()
       loadstring(game:GetObjects("rbxassetid://6695644299")[1].Source)()
    end)
+
+Section2:NewButton ("Брукхейвен", "говно", function()
+      loadstring(game:HttpGet("https://raw.githubusercontent.com/nxvap/VictoryHub/refs/heads/main/Victory_Hub.lua"))()
+   end)
