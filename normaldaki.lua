@@ -6,6 +6,8 @@ local Tab = Window:NewTab("Infinity Yeild")
 
 local Section = Tab:NewSection("Нормас")
 
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 Section:NewButton("Открыть инфинити", "Открывает инфинити", function()
    loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
    end)
@@ -30,6 +32,8 @@ Section1:NewButton("Открыть меню fly", "Открывается мен
 loadstring(game:HttpGet("https://raw.githubusercontent.com/XNEOFF/FlyGuiV3/main/FlyGuiV3.txt"))()
 end)
 
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 local Tab2 = Window:NewTab("Веселье и разьеб карты")
 
 local Section2 = Tab2:NewSection("Это халяль")
@@ -44,4 +48,14 @@ Section2:NewButton ("Изменение текстур f3x", "Удалять р�
 
 Section2:NewButton ("Брукхейвен", "говно", function()
       loadstring(game:HttpGet("https://raw.githubusercontent.com/nxvap/VictoryHub/refs/heads/main/Victory_Hub.lua"))()
+   end)
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+local Tab3 = Window:NewTab("Разработка скрипта")
+
+local Section3 = Tab3:NewSection("loadstring")
+
+Section3:NewButton ("Dex", "game.Players.LocalPlayer.gggfgf1111111 and USmafyFlowU = true", function()
+      loadstring(game:HttpGet('https://raw.githubusercontent.com/MassiveHubs/loadstring/refs/heads/main/DexXenoAndRezware'))()
    end)
