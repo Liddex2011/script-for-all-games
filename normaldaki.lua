@@ -50,6 +50,7 @@ Section2:NewButton ("Брукхейвен", "говно", function()
       loadstring(game:HttpGet("https://raw.githubusercontent.com/nxvap/VictoryHub/refs/heads/main/Victory_Hub.lua"))()
    end)
 
+
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 local Tab3 = Window:NewTab("Разработка скрипта")
