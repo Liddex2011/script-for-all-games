@@ -50,6 +50,30 @@ Section2:NewButton ("Брукхейвен", "говно", function()
       loadstring(game:HttpGet("https://raw.githubusercontent.com/nxvap/VictoryHub/refs/heads/main/Victory_Hub.lua"))()
    end)
 
+Section2:NewButton ("Mining sell", "говно", function()
+     -- Скрипт для плавного телепортирования игрока
+
+local plr = game:service("Players").LocalPlayer
+local tween_s = game:service("TweenService")
+local info = TweenInfo.new(1.7, Enum.EasingStyle.Quad) -- длительность 5 секунд
+
+-- функция телепортации
+function tp(x, y, z)
+    local character = plr.Character
+    if not character then return end
+    local hrp = character:FindFirstChild("HumanoidRootPart")
+    if not hrp then return end
+
+    local targetCFrame = CFrame.new(x, y, z)
+
+    local tween = tween_s:Create(hrp, info, {CFrame = targetCFrame})
+    tween:Play()
+end
+
+-- пример вызова функции с вашими координатами
+tp(58.01875686645508, 16.430463790893555, 26366.08203125)
+   end)
+
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
