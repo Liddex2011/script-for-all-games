@@ -74,6 +74,10 @@ end
 tp(58.01875686645508, 16.430463790893555, 26366.08203125)
    end)
 
+Section2:NewButton ("Anime", "тоже хуйня полная", function()
+      loadstring(game:HttpGet("https://raw.githubusercontent.com/VisualDoggyStudios/Anime-Fighting-Simulator-Endless/refs/heads/main/AFSEOBFUSCATED.lua"))()
+   end)
+
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
