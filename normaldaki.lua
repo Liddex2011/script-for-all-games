@@ -78,39 +78,40 @@ Section2:NewButton ("Anime", "тоже хуйня полная", function()
       loadstring(game:HttpGet("https://raw.githubusercontent.com/VisualDoggyStudios/Anime-Fighting-Simulator-Endless/refs/heads/main/AFSEOBFUSCATED.lua"))()
    end)
 
-local deathPosition = nil
-local teleportEnabled = false
-
 Section2:NewToggle("Телепорт на место смерти", "пиздакартон", function(state)
     if state then
-        teleportEnabled = true
-        -- добавляем слушатель на смерть
-        game.Players.PlayerAdded:Connect(function(player)
-            player.CharacterAdded:Connect(function(character)
-                local humanoid = character:WaitForChild("Humanoid")
-                local rootPart = character:WaitForChild("HumanoidRootPart")
-                
-                humanoid.Died:Connect(function()
-                    -- сохраняем позицию при смерти
-                    deathPosition = rootPart.CFrame
-                end)
-                
-                -- при респауне телепортируем
-                player.CharacterAdded:Connect(function(newChar)
-                    if deathPosition then
-                        local newRootPart = newChar:WaitForChild("HumanoidRootPart")
-                        newRootPart.CFrame = deathPosition
-                    end
-                end)
-            end)
+        while true do
+    local Players = game:GetService("Players")
+    local player = Players.LocalPlayer
+    local deathPosition = nil
+
+    player.CharacterAdded:Connect(function(character)
+        local humanoid = character:WaitForChild("Humanoid")
+        local rootPart = character:WaitForChild("HumanoidRootPart")
+        
+        humanoid.Died:Connect(function()
+            -- Сохраняем позицию при смерти
+            deathPosition = rootPart.CFrame
         end)
+        
+        -- После респауна телепортируем обратно
+        player.CharacterAdded:Connect(function(newChar)
+            if deathPosition then
+                local newRootPart = newChar:WaitForChild("HumanoidRootPart")
+                -- Телепортируем
+                newRootPart.CFrame = deathPosition
+                -- Очищаем позицию, чтобы не было повторных телепортаций
+            end
+        end)
+    end)
+
+    wait(10) -- задержка, чтобы не перегружать
+end
     else
-        teleportEnabled = false
-        print("Toggle Off")
-        -- отключаешь автоматическую телепортацию
-        -- Можно убрать слушатели или просто ничего не делать
+         deathPosition = nil
     end
 end)
+             
 
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
